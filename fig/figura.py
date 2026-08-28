@@ -53,4 +53,13 @@ class Figura(ABC):
         raise NotImplementedError
 
     def __str__(self) -> str:
-        pass
+        """
+        Devuelve una representación en texto de la figura.
+
+        Este método debe ser sobrescrito por las subclases para 
+        mostrar sus atributos específicos, área y perímetro.
+
+        Returns:
+            str: Representación en texto de la figura.
+        """
+        return ""
