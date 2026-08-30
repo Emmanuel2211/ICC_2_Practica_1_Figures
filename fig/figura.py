@@ -56,7 +56,7 @@ class Figura(ABC):
         """
         Devuelve una representación en texto de la figura.
 
-        Este método debe ser sobrescrito por las subclases para 
+        Este método debe ser sobrescrito por las subclases para
         mostrar sus atributos específicos, área y perímetro.
 
         Returns:

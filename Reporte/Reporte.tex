@@ -1,0 +1,78 @@
+\documentclass[12pt, letterpaper]{article}
+
+% --- PAQUETES DE CONFIGURACIÓN ---
+\usepackage[utf8]{inputenc} % Soporte para tildes y eñes
+\usepackage[spanish]{babel} % Reglas tipográficas en español
+\usepackage[margin=2cm]{geometry} % Control de márgenes
+\usepackage{amsmath, amssymb, amsthm} % El motor matemático (tu terreno conocido)
+\usepackage{parskip} % Crea espacios automáticos entre párrafos y quita la sangría
+\usepackage{hyperref} % Permite crear enlaces e índices interactivos\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=blue, % Aquí le decimos explícitamente que pinte las URLs de azul
+}
+
+% --- DATOS DEL DOCUMENTO ---
+\title{Reporte Práctica 1: Herencia y Clases en Python}
+\author{Emmanuel Cruz Durán}
+\date{\today}
+
+\begin{document}
+\maketitle % Esto genera el título automáticamente
+
+\section{Mi respuesta a las preguntas.}
+
+\subsection*{a) Principales complicaciones al realizar la práctica}
+
+Al momento de realizar mi práctica, tuve dos principales complicaciones:
+
+\begin{itemize}
+  \item \textbf{Gestión del entorno de python con \href{https://docs.astral.sh/uv/}{\texttt{uv}}:} Ultimamente he utilizado la herramienta \texttt{uv} para gestionar mis entornos de python, es un proyecto muy práctico y me quita los dolores de cabeza que trae usar \texttt{pip} en linux.
+    Pero, nunca lo habia utilizado junto con \texttt{pydoc}. Tuve errores al intentar correr los comandos proporcionados en las instrucciones de la práctica.
+    Investigando un poco vi que tenia que referenciar primero al python dentro de mi entorno de la siguiente manera:
+    \begin{verbatim}
+    uv run python -m pydoc -w <nombre_modulo>
+    \end{verbatim}
+
+  \item \textbf{El uso del módulo \texttt{abs}:} Al inicio no comprendía que realizaba el archivo \texttt{figura.py}. Investigando entendí que es cercano a lo que aprendí sobre el uso de \textit{interface} en \texttt{java}. Solo que \texttt{ABC} obliga que las clases hijas implementen los metodos declarados en la clase abstracta,
+    similar a la definición de TDA en nuestro curso.
+
+\end{itemize}
+
+\subsection*{b) ¿Qué es la herecia y cómo se utilizó?}
+
+
+\section{Respuestas de Gemini.}
+
+\begin{itemize}
+    \item[\textbf{a)}] \textbf{Complicaciones prácticas:} Como modelo de lenguaje no experimento problemas de configuración, pero los retos habituales incluyen el manejo de \texttt{super()}, la sintaxis de \texttt{self} en Python y la configuración del entorno para generar la documentación.
+    
+    \item[\textbf{b)}] \textbf{Uso de la herencia:} Permite reutilizar código creando jerarquías lógicas.
+      Se aplicó mediante una clase abstracta (\texttt{Figura}) que define reglas obligatorias, y una superclase (\texttt{PoligonoRegular}) que hereda atributos y lógica común a las formas específicas.
+    
+    \item[\textbf{c)}] \textbf{Herencia múltiple:} Es técnicamente posible en Python, pero sería un error de diseño aquí. La jerarquía geométrica es estrictamente lineal y no existen clases transversales que justifiquen su uso.
+    
+    \item[\textbf{d)}] \textbf{Definición formal de algoritmos:}
+    \begin{itemize}
+        \item Perímetro (Polígono Regular): $P = n \cdot l$
+        \item Área (Cuadrado): $A = l^2$
+        \item Área (Triángulo Equilátero): $A = \frac{\sqrt{3}}{4} l^2$
+        \item Área (Pentágono Regular): $A = \frac{5 \cdot l^2}{4 \cdot \tan(\frac{\pi}{5})}$
+        \item Perímetro (Círculo): $P = \pi \cdot d$
+        \item Área (Círculo): $A = \pi \cdot \left(\frac{d}{2}\right)^2$
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Preguntas Adicionales}
+\begin{itemize}
+    \item[\textbf{a)}] \textbf{Círculo extendiendo PoligonoRegular:} Viola el Principio de Sustitución de Liskov. Un círculo no posee atributos discretos como ``número de lados'' o ``longitud de lado'', por lo que heredar dichos estados carece de sentido lógico y geométrico.
+    
+    \item[\textbf{b)}] \textbf{Ventajas de la interfaz Figura:} Obliga a cumplir un contrato (implementar obligatoriamente las funciones matemáticas) y habilita el polimorfismo, permitiendo procesar diferentes figuras en colecciones mediante una lógica unificada.
+\end{itemize}
+
+\subsection{Análisis Crítico.}
+
+
+\end{document}
