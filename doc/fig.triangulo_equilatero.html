@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module fig.triangulo_equilatero</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="fig.html" class="white">fig</a>.triangulo_equilatero</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/emmanuel/Documentos/Proyects/python_proyects/ICC_2_Practica_1_Figures/fig/triangulo_equilatero.py">/home/emmanuel/Documentos/Proyects/python_proyects/ICC_2_Practica_1_Figures/fig/triangulo_equilatero.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="math.html">math</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="fig.poligono_regular.html#PoligonoRegular">fig.poligono_regular.PoligonoRegular</a>(<a href="fig.figura.html#Figura">fig.figura.Figura</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="fig.triangulo_equilatero.html#TrianguloEquilatero">TrianguloEquilatero</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="TrianguloEquilatero">class <strong>TrianguloEquilatero</strong></a>(<a href="fig.poligono_regular.html#PoligonoRegular">fig.poligono_regular.PoligonoRegular</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#TrianguloEquilatero">TrianguloEquilatero</a>(longitud_lado:&nbsp;float)&nbsp;-&amp;gt;&nbsp;None<br>
+&nbsp;<br>
+Clase&nbsp;que&nbsp;representa&nbsp;un&nbsp;triángulo&nbsp;equilatero.<br>
+&nbsp;<br>
+Hereda&nbsp;de&nbsp;<a href="fig.poligono_regular.html#PoligonoRegular">PoligonoRegular</a>&nbsp;y&nbsp;define&nbsp;la&nbsp;lógica&nbsp;para&nbsp;calcular&nbsp;<br>
+el&nbsp;área&nbsp;especifica&nbsp;de&nbsp;un&nbsp;triángulo&nbsp;con&nbsp;lados&nbsp;iguales.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="fig.triangulo_equilatero.html#TrianguloEquilatero">TrianguloEquilatero</a></dd>
+<dd><a href="fig.poligono_regular.html#PoligonoRegular">fig.poligono_regular.PoligonoRegular</a></dd>
+<dd><a href="fig.figura.html#Figura">fig.figura.Figura</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="TrianguloEquilatero-__init__"><strong>__init__</strong></a>(self, longitud_lado: float) -&gt; None</dt><dd><span class="code">Inicializa&nbsp;un&nbsp;<a href="#TrianguloEquilatero">TrianguloEquilatero</a>.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;longitud_lado&nbsp;(float):&nbsp;La&nbsp;medida&nbsp;de&nbsp;uno&nbsp;de&nbsp;los&nbsp;lados&nbsp;del&nbsp;triángulo.</span></dd></dl>
+
+<dl><dt><a name="TrianguloEquilatero-calcular_area"><strong>calcular_area</strong></a>(self) -&gt; float</dt><dd><span class="code">Calcula&nbsp;el&nbsp;área&nbsp;del&nbsp;triángulo.<br>
+&nbsp;<br>
+Return:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;El&nbsp;área&nbsp;calculada.</span></dd></dl>
+
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset()</dl>
+
+<hr>
+Methods inherited from <a href="fig.poligono_regular.html#PoligonoRegular">fig.poligono_regular.PoligonoRegular</a>:<br>
+<dl><dt><a name="TrianguloEquilatero-__str__"><strong>__str__</strong></a>(self) -&gt; str</dt><dd><span class="code">Devuelve&nbsp;una&nbsp;representación&nbsp;en&nbsp;texto&nbsp;de&nbsp;la&nbsp;figura.<br>
+&nbsp;<br>
+Genera&nbsp;una&nbsp;cadena&nbsp;multilínea&nbsp;que&nbsp;incluye&nbsp;el&nbsp;tipo&nbsp;de&nbsp;figura,&nbsp;<br>
+la&nbsp;longitud&nbsp;de&nbsp;su&nbsp;lado&nbsp;(o&nbsp;diámetro),&nbsp;el&nbsp;área&nbsp;y&nbsp;el&nbsp;perímetro&nbsp;<br>
+con&nbsp;sus&nbsp;respectivas&nbsp;unidades.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;La&nbsp;información&nbsp;formateada&nbsp;de&nbsp;la&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="TrianguloEquilatero-calcular_perimetro"><strong>calcular_perimetro</strong></a>(self) -&gt; float</dt><dd><span class="code">Calcula&nbsp;el&nbsp;perímetro&nbsp;del&nbsp;polígono&nbsp;regualar&nbsp;de&nbsp;n&nbsp;lados.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;El&nbsp;perímetro&nbsp;del&nbsp;polígono&nbsp;regular.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="fig.figura.html#Figura">fig.figura.Figura</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

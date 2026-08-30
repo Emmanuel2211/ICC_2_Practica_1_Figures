@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module fig.figura</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title"><a href="fig.html" class="white">fig</a>.figura</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/emmanuel/Documentos/Proyects/python_proyects/ICC_2_Practica_1_Figures/fig/figura.py">/home/emmanuel/Documentos/Proyects/python_proyects/ICC_2_Practica_1_Figures/fig/figura.py</a></td></tr></table>
+    <p><span class="code">Módulo&nbsp;figura<br>
+=============<br>
+&nbsp;<br>
+Define&nbsp;la&nbsp;clase&nbsp;abstracta&nbsp;``<a href="#Figura">Figura</a>``,&nbsp;que&nbsp;establece&nbsp;la&nbsp;interface&nbsp;común&nbsp;para<br>
+todas&nbsp;las&nbsp;figuras&nbsp;geométricas&nbsp;del&nbsp;proyecto.</span></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="abc.html#ABC">abc.ABC</a>(<a href="builtins.html#object">builtins.object</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="fig.figura.html#Figura">Figura</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="Figura">class <strong>Figura</strong></a>(<a href="abc.html#ABC">abc.ABC</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code">Clase&nbsp;abstracta&nbsp;que&nbsp;representa&nbsp;una&nbsp;figura&nbsp;geométrica.<br>
+&nbsp;<br>
+Toda&nbsp;figura&nbsp;debe&nbsp;ser&nbsp;capaz&nbsp;de&nbsp;calcular&nbsp;su&nbsp;área&nbsp;y&nbsp;su&nbsp;perímetro.<br>
+Además,&nbsp;proporciona&nbsp;una&nbsp;representación&nbsp;en&nbsp;texto&nbsp;con&nbsp;dicha<br>
+información.<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="fig.figura.html#Figura">Figura</a></dd>
+<dd><a href="abc.html#ABC">abc.ABC</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="Figura-__str__"><strong>__str__</strong></a>(self) -&gt; str</dt><dd><span class="code">Devuelve&nbsp;una&nbsp;representación&nbsp;en&nbsp;texto&nbsp;de&nbsp;la&nbsp;figura.<br>
+&nbsp;<br>
+Este&nbsp;método&nbsp;debe&nbsp;ser&nbsp;sobrescrito&nbsp;por&nbsp;las&nbsp;subclases&nbsp;para&nbsp;<br>
+mostrar&nbsp;sus&nbsp;atributos&nbsp;específicos,&nbsp;área&nbsp;y&nbsp;perímetro.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;str:&nbsp;Representación&nbsp;en&nbsp;texto&nbsp;de&nbsp;la&nbsp;figura.</span></dd></dl>
+
+<dl><dt><a name="Figura-calcular_area"><strong>calcular_area</strong></a>(self) -&gt; float</dt><dd><span class="code">Calcula&nbsp;el&nbsp;área&nbsp;de&nbsp;la&nbsp;figura.<br>
+&nbsp;<br>
+Este&nbsp;método&nbsp;debe&nbsp;ser&nbsp;implementado&nbsp;por&nbsp;las&nbsp;subclases.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El&nbsp;área&nbsp;de&nbsp;la&nbsp;figura.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;una&nbsp;subclase&nbsp;no&nbsp;implementa&nbsp;este&nbsp;método.</span></dd></dl>
+
+<dl><dt><a name="Figura-calcular_perimetro"><strong>calcular_perimetro</strong></a>(self) -&gt; float</dt><dd><span class="code">Calcula&nbsp;el&nbsp;perímetro&nbsp;de&nbsp;la&nbsp;figura.<br>
+&nbsp;<br>
+Este&nbsp;método&nbsp;debe&nbsp;ser&nbsp;implementado&nbsp;por&nbsp;las&nbsp;subclases.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;float:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;El&nbsp;perímetro&nbsp;de&nbsp;la&nbsp;figura.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Si&nbsp;una&nbsp;subclase&nbsp;no&nbsp;implementa&nbsp;este&nbsp;método.</span></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><span class="code">dictionary&nbsp;for&nbsp;instance&nbsp;variables</span></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes defined here:<br>
+<dl><dt><strong>__abstractmethods__</strong> = frozenset({'calcular_area', 'calcular_perimetro'})</dl>
+
+</td></tr></table></td></tr></table>
+</body></html>
