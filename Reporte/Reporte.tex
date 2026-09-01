@@ -1,6 +1,7 @@
 \documentclass[12pt, letterpaper]{article}
 
 % --- PAQUETES DE CONFIGURACIÓN ---
+
 \usepackage[utf8]{inputenc} % Soporte para tildes y eñes
 \usepackage[spanish]{babel} % Reglas tipográficas en español
 \usepackage[margin=2cm]{geometry} % Control de márgenes
@@ -13,6 +14,14 @@
     filecolor=magenta,
     urlcolor=blue, % Aquí le decimos explícitamente que pinte las URLs de azul
 }
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{float}
+
+% Traducción de etiquetas al español
+\floatname{algorithm}{Algoritmo}
+\renewcommand{\algorithmicrequire}{\textbf{Entrada:}}
+\renewcommand{\algorithmicensure}{\textbf{Salida:}}
 
 % --- DATOS DEL DOCUMENTO ---
 \title{Reporte Práctica 1: Herencia y Clases en Python}
@@ -29,37 +38,135 @@
 Al momento de realizar mi práctica, tuve dos principales complicaciones:
 
 \begin{itemize}
-  \item \textbf{Gestión del entorno de python con \href{https://docs.astral.sh/uv/}{\texttt{uv}}:} Ultimamente he utilizado la herramienta \texttt{uv} para gestionar mis entornos de python, es un proyecto muy práctico y me quita los dolores de cabeza que trae usar \texttt{pip} en linux.
-    Pero, nunca lo habia utilizado junto con \texttt{pydoc}. Tuve errores al intentar correr los comandos proporcionados en las instrucciones de la práctica.
-    Investigando un poco vi que tenia que referenciar primero al python dentro de mi entorno de la siguiente manera:
+  \item \textbf{Gestión del entorno de python con \href{https://docs.astral.sh/uv/}{\texttt{uv}}:} Últimamente he utilizado la herramienta \texttt{uv} para gestionar mis entornos de python, es un proyecto muy práctico y me quita los dolores de cabeza que trae usar \texttt{pip} en linux.
+    Pero, nunca lo había utilizado junto con \texttt{pydoc}. Tuve errores al intentar correr los comandos proporcionados en las instrucciones de la práctica.
+    Investigando un poco vi que tenía que referenciar primero al python dentro de mi entorno de la siguiente manera:
     \begin{verbatim}
     uv run python -m pydoc -w <nombre_modulo>
     \end{verbatim}
 
-  \item \textbf{El uso del módulo \texttt{abs}:} Al inicio no comprendía que realizaba el archivo \texttt{figura.py}. Investigando entendí que es cercano a lo que aprendí sobre el uso de \textit{interface} en \texttt{java}. Solo que \texttt{ABC} obliga que las clases hijas implementen los metodos declarados en la clase abstracta,
+  \item \textbf{El uso del módulo \texttt{abs}:} Al inicio no comprendía qué realizaba el archivo \texttt{figura.py}. Investigando entendí que es cercano a lo que aprendí sobre el uso de \textit{interface} en \texttt{java}. Solo que \texttt{ABC} obliga que las clases hijas implementen los métodos declarados en la clase abstracta,
     similar a la definición de TDA en nuestro curso.
 
 \end{itemize}
 
-\subsection*{b) ¿Qué es la herecia y cómo se utilizó?}
+\subsection*{b) ¿Qué es la herencia y cómo se utilizó?}
 
 \begin{itemize}
-  \item La herecia es una técnica de la POO, que permite reutilizar codigo entre objetos que pertenecen a un grupo, es decir, que comparten características (*atributos*) y comportamientos (*métodos*). 
-    Un ejemplo de uso en nuestra practica es en clase \texttt{PoligonoRegular}. En la cual 
-    se define el método \texttt{calcular\_perimetro}, cuyo funcionamiento es, en efecto, calcular el perímetro de cualquier poligono regular. Esto es posible pues para cualquier poligono regular de $n$-lados, 
-    la formula es la misma.
+  \item La herencia es una técnica de la POO, que permite reutilizar código entre objetos que pertenecen a un grupo, es decir, que comparten características (*atributos*) y comportamientos (*métodos*). 
+    Un ejemplo de uso en nuestra práctica es en clase \texttt{PolígonoRegular}. En la cual 
+    se define el método \texttt{calcular\_perímetro}, cuyo funcionamiento es, en efecto, calcular el perímetro de cualquier polígono regular. Esto es posible pues para cualquier polígono regular de $n$-lados, 
+    la fórmula es la misma.
 \end{itemize}
 
-\subsection*{c) ¿En esta practica se puede hacer uso de herecia multiple?}
+\subsection*{c) ¿En esta práctica se puede hacer uso de herencia múltiple?}
 \begin{itemize}
-  \item No se puede hacer pues es impractico, ningún polígono regular tiene características compartidas más alla de como se calcula su perimetro, el hecho de que tienen lados con longitudes iguales para cada lado. Por otro lado, nuestra clase \texttt{Círculo} tiene características completamente 
+  \item No se puede hacer pues es impráctico, ningún polígono regular tiene características compartidas más allá de como se calcula su perímetro, el hecho de que tienen lados con longitudes iguales para cada lado. Por otro lado, nuestra clase \texttt{Círculo} tiene características completamente 
     diferentes.
 \end{itemize}
 
 \subsection*{d) Define formalmente los algoritmos que implementaste:}
 
+\begin{algorithm}
+\caption{PerímetroPolígonoRegular}
+\begin{algorithmic}[1] % El [1] indica que queremos numerar cada línea
+    
+    \Require Un número natural de lados $n$, la longitud de lado $l \in \mathbb{R}$
+    \Ensure Un número que resulta ser el perímetro de la figura.
+    
+    \State Sea $\text{perímetro} \leftarrow n \cdot l$
+    \State Devolver perímetro.
+    
+\end{algorithmic}
+
+\end{algorithm}
+
+\begin{algorithm}
+\caption{ÁreaCuadrado}
+\begin{algorithmic}[1] 
+    
+    \Require Un número que representa la longitud de lado $l$.
+    \Ensure Un número que resulta ser el área del cuadrado.
+    
+    \State Sea $\text{área} \leftarrow l^2$
+
+    \State Devolver área.
+    
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}
+\caption{ÁreaTriánguloEquilátero}
+\begin{algorithmic}[1] 
+    
+    \Require Un número que representa la longitud de lado $l$.
+    \Ensure Un número  que resulta ser el área del triángulo.   
+
+    \State Sea $\text{altura} \leftarrow \sqrt{l^2 - (\frac{l}{2})^2}$
+    \State Sea $\text{área} \leftarrow (l \cdot \text{altura})/2$ 
+    
+    \State Devolver área.
+    
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{ÁreaPentágono}
+\begin{algorithmic}[1] 
+    
+    \Require Un número que representa la longitud de lado $l$.
+    \Ensure Un número  que resulta ser el área del pentágono.   
+
+    \State Sea $\text{perímetro} \leftarrow \text{PerímetroPolígonoRegular}$
+    \State Sea $\text{apotema} \leftarrow l / (2 \cdot \tan\{ \pi/5 \})$ 
+    \State Sea $\text{área} \leftarrow (\text{perímetro} \cdot \text{apotema}) /2$
+
+    \State Devolver área.
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{PerímetroCírculo}
+\begin{algorithmic}[1] 
+    
+    \Require Un número que representa la longitud de diámetro $d$.
+    \Ensure Un número  que resulta ser el perímetro del círculo.   
+
+    \State Sea $\text{perímetro} \leftarrow \pi \cdot d$
+
+    \State Devolver perímetro.
+
+\end{algorithmic}
+\end{algorithm}
+
+\begin{algorithm}[H]
+\caption{ÁreaCírculo}
+\begin{algorithmic}[1] 
+    
+    \Require Un número que representa la longitud de diámetro $d$.
+    \Ensure Un número  que resulta ser el área del círculo.   
+
+    \State Sea $\text{área} \leftarrow \pi \cdot (d/2)^2$
+
+    \State Devolver área.
+
+\end{algorithmic}
+\end{algorithm}
+
+\subsection*{Preguntas Adicionales:}
+
 \begin{itemize}
-  \item hello
+  \item ¿Por qué sería una mala decisión de diseño que la clase \texttt{Circulo} extienda a la clase abstracta \texttt{PolígonoRegular}?
+    \begin{itemize}
+      \item Porque la clase \texttt{Circulo} no tiene atributos que heredar de \texttt{PolígonoRegular} pues no tiene un número de lados, ergo, no tiene longitud de lado. De igual forma, no tiene métodos que heredar, la fórmula para área y el perímetro
+        del círculo son completamente diferentes a la de cualquier polígono regular.
+    \end{itemize}
+  \item ¿Cuáles son las ventajas de que exista la interfaz \texttt{Figura}?
+    \begin{itemize}
+      \item El uso de la clase \texttt{ABC} hace de \textbf{TDA}, esto nos permite definir las operaciones que nuestra implementación
+        de la clase forzosamente tendrá que realizar, esto por medio de \texttt{@abstractmethod}.
+    \end{itemize}
 \end{itemize}
 
 \section{Respuestas de Gemini.}
@@ -68,7 +175,7 @@ Al momento de realizar mi práctica, tuve dos principales complicaciones:
     \item[\textbf{a)}] \textbf{Complicaciones prácticas:} Como modelo de lenguaje no experimento problemas de configuración, pero los retos habituales incluyen el manejo de \texttt{super()}, la sintaxis de \texttt{self} en Python y la configuración del entorno para generar la documentación.
     
     \item[\textbf{b)}] \textbf{Uso de la herencia:} Permite reutilizar código creando jerarquías lógicas.
-      Se aplicó mediante una clase abstracta (\texttt{Figura}) que define reglas obligatorias, y una superclase (\texttt{PoligonoRegular}) que hereda atributos y lógica común a las formas específicas.
+      Se aplicó mediante una clase abstracta (\texttt{Figura}) que define reglas obligatorias, y una superclase (\texttt{PolígonoRegular}) que hereda atributos y lógica común a las formas específicas.
     
     \item[\textbf{c)}] \textbf{Herencia múltiple:} Es técnicamente posible en Python, pero sería un error de diseño aquí. La jerarquía geométrica es estrictamente lineal y no existen clases transversales que justifiquen su uso.
     
@@ -83,14 +190,16 @@ Al momento de realizar mi práctica, tuve dos principales complicaciones:
     \end{itemize}
 \end{itemize}
 
-\subsection*{Preguntas Adicionales}
+\subsection*{Preguntas Adicionales (IA):}
 \begin{itemize}
-    \item[\textbf{a)}] \textbf{Círculo extendiendo PoligonoRegular:} Viola el Principio de Sustitución de Liskov. Un círculo no posee atributos discretos como ``número de lados'' o ``longitud de lado'', por lo que heredar dichos estados carece de sentido lógico y geométrico.
+    \item[\textbf{a)}] \textbf{Círculo extendiendo PolígonoRegular:} Viola el Principio de Sustitución de Liskov. Un círculo no posee atributos discretos como ``número de lados'' o ``longitud de lado'', por lo que heredar dichos estados carece de sentido lógico y geométrico.
     
     \item[\textbf{b)}] \textbf{Ventajas de la interfaz Figura:} Obliga a cumplir un contrato (implementar obligatoriamente las funciones matemáticas) y habilita el polimorfismo, permitiendo procesar diferentes figuras en colecciones mediante una lógica unificada.
 \end{itemize}
 
 \subsection{Análisis Crítico.}
 
+Mientras que la IA responde con conceptos formales de diseño —como el "Principio de Sustitución de Liskov" o el "polimorfismo"—, mi enfoque se centró mucho más en la naturaleza geométrica de las figuras y la implementación de Tipos de Datos Abstractos (TDA) vistos en clase. Por ejemplo, para justificar por qué un círculo no hereda de un polígono, mi lógica fue estrictamente matemática: la ausencia de vértices y la incompatibilidad de la fórmula.
 
+Por otro lado, en la pregunta sobre las complicaciones de la práctica, la IA enumera problemas comunes de sintaxis (como el uso de self o super()). Mi experiencia real fue mucho más contextual: los verdaderos retos técnicos estuvieron en lidiar con la configuración del entorno virtual y ajustar la documentación con \texttt{PyDoc}. En conclusión, aunque la IA es una herramienta excelente para definir conceptos formalmente (como la notación de complejidad asintótica de los algoritmos), pero, en ocasiones carece del criterio humano necesario para tomar decisiones adaptadas a un entorno real.
 \end{document}
